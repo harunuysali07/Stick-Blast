@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9a47c07bb44114da6f2986c5a6a054, type: 3}
+  m_Name: Shape Data L Long Right
+  m_EditorClassIdentifier: 
+  _objectID: 5e0cb974-ca20-4df9-8aef-7ae4605d9ea8
+  shapeInfos:
+  - top: 0
+    right: 0
+    bottom: 0
+    left: 0
+  - top: 0
+    right: 0
+    bottom: 0
+    left: 0
+  - top: 0
+    right: 0
+    bottom: 0
+    left: 0
+  - top: 0
+    right: 0
+    bottom: 0
+    left: 0
+  - top: 1
+    right: 0
+    bottom: 0
+    left: 1
+  - top: 1
+    right: 0
+    bottom: 0
+    left: 0
+  - top: 0
+    right: 0
+    bottom: 0
+    left: 0
+  - top: 0
+    right: 0
+    bottom: 0
+    left: 0
+  - top: 0
+    right: 0
+    bottom: 0
+    left: 0
+  isUnlockedByDefault: 1
