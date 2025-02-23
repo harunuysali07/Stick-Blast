@@ -6,10 +6,15 @@ using UnityEngine.UI;
 
 public class Shape : MonoBehaviour
 {
+    public ShapeData ShapeData => _shapeData;
+    
     [SerializeField] private List<Piece> pieces;
     [SerializeField] private Canvas canvas;
     
     private ShapeData _shapeData;
+    
+    private Vector3 _initialScale;
+    private Vector3 _resizeScale;
 
     [Button]
     public void ApplyShapeData(ShapeData shapeData)
@@ -32,6 +37,9 @@ public class Shape : MonoBehaviour
 
     private void Resize()
     {
+        _initialScale = canvas.transform.localScale;
+        _resizeScale = canvas.transform.localScale;
+
         var nonEmptyShapeInfoCount = _shapeData.shapeInfos.Count(x => x.top || x.right || x.bottom || x.left);
         var activeImages = canvas.GetComponentsInChildren<Image>(false);
 
@@ -52,6 +60,8 @@ public class Shape : MonoBehaviour
         
         canvas.transform.position = positions;
         canvas.transform.localPosition *= -1f;
+        
+        _resizeScale = canvas.transform.localScale;
     }
     
     private List<ShapeInfo> GetNeighbors(int index)
@@ -95,5 +105,10 @@ public class Shape : MonoBehaviour
         }
 
         return neighbors;
+    }
+
+    public void SetSelected(bool state)
+    {
+        canvas.transform.localScale = state ? _initialScale : _resizeScale;
     }
 }

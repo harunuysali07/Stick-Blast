@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
+    public Color32 ThemeColor => levelData.themeColor;
+    
     [Header("Controllers")]
     public GridController gridController;
     
@@ -12,13 +14,6 @@ public class LevelController : MonoBehaviour
     [ShowInInspector, ReadOnly] public LevelData levelData;
     [ShowInInspector, ReadOnly] public int RemainingGemCount { get; private set; }
     
-    [Header("Shape Variables")]
-    [SerializeField] private Shape shapePrefab;
-    [SerializeField] private Transform shapeSpawnPoint;
-    [SerializeField] private List<Transform> shapePositions;
-    
-    private List<Shape> _activeShapes = new List<Shape>();
-
     public LevelController Initialize(LevelData currentLevelData)
     {
         levelData = currentLevelData;
@@ -33,26 +28,5 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
         gridController.Initialize();
-        SpawnShape();
-    }
-    
-    public void SpawnShape()
-    {
-        if (_activeShapes.Count > 0)
-        {
-            Debug.LogError("There is already an active shape!");
-            return;
-        }
-        
-        for (var i = 0; i < shapePositions.Count; i++)
-        {
-            var shapeData = DataManager.AllShapes.RandomItem();
-            var shape = Instantiate(shapePrefab, shapeSpawnPoint.position, Quaternion.identity);
-            shape.ApplyShapeData(shapeData);
-        
-            shape.transform.DOMove(shapePositions[_activeShapes.Count].position, 0.5f).SetEase(Ease.OutCubic);
-        
-            _activeShapes.Add(shape);   
-        }
     }
 }

@@ -8,4 +8,5 @@ using Random = UnityEngine.Random;
 public class LevelData : ScriptableObjectWithID
 {
     public int targetGemCount;
+    public Color32 themeColor;
 }

@@ -23,4 +23,12 @@ public class ShapeInfo
     public bool right;
     public bool bottom;
     public bool left;
+
+    public bool Compare(ShapeInfo other)
+    {
+        return !((top && other.top) || (right && other.right) || (bottom && other.bottom) || (left && other.left));
+    }
+
+    public bool IsFull => top && right && bottom && left;
+    public bool IsEmpty => !top && !right && !bottom && !left;
 }

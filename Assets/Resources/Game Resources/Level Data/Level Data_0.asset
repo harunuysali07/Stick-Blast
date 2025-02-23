@@ -13,14 +13,7 @@ MonoBehaviour:
   m_Name: Level Data_0
   m_EditorClassIdentifier: 
   _objectID: b3ef0fb9-d486-41f2-8604-427d5cbc20ee
-  isInfinityMoves: 1
-  totalMoves: 0
-  targetMatchCount: 20
-  targetColorData: {fileID: 0}
-  availableColors:
-  - {fileID: 11400000, guid: 897f529493120624a94d20813a1e5654, type: 2}
-  - {fileID: 11400000, guid: c7633ed1546cda84cb39c2216eaa245f, type: 2}
-  - {fileID: 11400000, guid: d3e2098330b3a8a458274496b975d1ea, type: 2}
-  - {fileID: 11400000, guid: b1bbbb8df1bf93c4a829841987c2dfa1, type: 2}
-  cubeColorsInGrid: []
-  cubeColorsToSpawn: []
+  targetGemCount: 0
+  themeColor:
+    serializedVersion: 2
+    rgba: 4294902015
